@@ -10,6 +10,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+//line 14-17 are not required as its related logic
 const meter = metrics.getMeter('email-meter');
 const emailCounter = meter.createCounter('emails_sent_total', {
   description: 'Count of emails sent',
@@ -54,8 +55,8 @@ const transporter = nodemailer.createTransport({
   port: 587,
   secure: false,
   auth: {
-    user: 'shravan.hj.matrex@gmail.com',
-    pass: 'lhsb pqvr cern sgrs', // HARD-CODED (not for prod)
+    user: '',
+    pass: '', // HARD-CODED (not for prod)
   },
 });
 
